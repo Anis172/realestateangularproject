@@ -1,0 +1,58 @@
+<div class="form-card">
+  <h2>Add New House</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="field">
+      <label>Name</label>
+      <input formControlName="name" placeholder="House name"/>
+      @if (form.get('name')?.invalid && form.get('name')?.touched) {
+        <p class="error">Name required, minimum 3 characters</p>
+      }
+    </div>
+
+    <div class="field">
+      <label>City</label>
+      <input formControlName="city" placeholder="City"/>
+      @if (form.get('city')?.invalid && form.get('city')?.touched) {
+        <p class="error">City required</p>
+      }
+    </div>
+
+    <div class="field">
+      <label>State</label>
+      <input formControlName="state" placeholder="State"/>
+      @if (form.get('state')?.invalid && form.get('state')?.touched) {
+        <p class="error">State required</p>
+      }
+    </div>
+
+    <div class="field">
+      <label>Available Units</label>
+      <input type="number" formControlName="availableUnits" placeholder="Units"/>
+      @if (form.get('availableUnits')?.invalid && form.get('availableUnits')?.touched) {
+        <p class="error">Minimum 1 unit</p>
+      }
+    </div>
+
+    <div class="field">
+      <label>Price</label>
+      <input type="number" formControlName="price" placeholder="Price"/>
+      @if (form.get('price')?.invalid && form.get('price')?.touched) {
+        <p class="error">Minimum price 10000</p>
+      }
+    </div>
+
+    <div class="checkboxes">
+      <label><input type="checkbox" formControlName="wifi"/> Wifi</label>
+      <label><input type="checkbox" formControlName="laundry"/> Laundry</label>
+      <label><input type="checkbox" formControlName="available"/> Available</label>
+    </div>
+
+    <div class="buttons">
+      <button type="submit" [disabled]="form.invalid">Add House</button>
+      <a routerLink="/">Cancel</a>
+    </div>
+
+  </form>
+</div>

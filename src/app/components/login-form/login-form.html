@@ -1,0 +1,33 @@
+<div class="form-card">
+  <h2>Apply Now</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="field">
+      <label>First Name</label>
+      <input formControlName="firstName" placeholder="First Name"/>
+      @if (form.get('firstName')?.invalid && form.get('firstName')?.touched) {
+        <p class="error">First name required</p>
+      }
+    </div>
+
+    <div class="field">
+      <label>Last Name</label>
+      <input formControlName="lastName" placeholder="Last Name"/>
+      @if (form.get('lastName')?.invalid && form.get('lastName')?.touched) {
+        <p class="error">Last name required</p>
+      }
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" formControlName="email" placeholder="Email"/>
+      @if (form.get('email')?.invalid && form.get('email')?.touched) {
+        <p class="error">Valid email required</p>
+      }
+    </div>
+
+    <button type="submit" [disabled]="form.invalid">Apply</button>
+
+  </form>
+</div>

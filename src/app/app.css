@@ -1,0 +1,41 @@
+:host {
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #2d3748;
+  display: block;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: #1a365d;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 35px;
+  background-color: #f7fafc;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  width: fit-content;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4a5568;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #e2e8f0;
+  color: #1a365d;
+}

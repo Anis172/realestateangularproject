@@ -1,0 +1,69 @@
+{
+  "housingLocation": [
+    {
+      "id": "1",
+      "name": "Acme Fresh Start Housing",
+      "city": "Chicago",
+      "state": "IL",
+      "photo": "https://angular.dev/assets/images/tutorials/common/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      "availableUnits": 4,
+      "wifi": true,
+      "laundry": true,
+      "available": true,
+      "price": 350000,
+      "coordinate": {
+        "latitude": 41.8781,
+        "longitude": -87.6298
+      }
+    },
+    {
+      "id": "2",
+      "name": "A113 Transitional Housing",
+      "city": "Santa Monica",
+      "state": "CA",
+      "photo": "https://angular.dev/assets/images/tutorials/common/brandon-griggs-wR11KBaB86U-unsplash.jpg",
+      "availableUnits": 0,
+      "wifi": false,
+      "laundry": true,
+      "available": false,
+      "price": 520000,
+      "coordinate": {
+        "latitude": 34.0195,
+        "longitude": -118.4912
+      }
+    },
+    {
+      "id": "3",
+      "name": "Warm Beds Housing Support",
+      "city": "Juneau",
+      "state": "AK",
+      "photo": "https://angular.dev/assets/images/tutorials/common/i-do-nothing-but-love-lAyXdl1-Whs-unsplash.jpg",
+      "availableUnits": 1,
+      "wifi": false,
+      "laundry": false,
+      "available": true,
+      "price": 280000,
+      "coordinate": {
+        "latitude": 58.3005,
+        "longitude": -134.4197
+      }
+    },
+    {
+      "name": "La luz",
+      "city": "Malaga",
+      "state": "Malaga",
+      "availableUnits": 1,
+      "price": 100000,
+      "wifi": true,
+      "laundry": true,
+      "available": true,
+      "photo": "",
+      "coordinate": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "id": "dTEdRtzQEYc"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

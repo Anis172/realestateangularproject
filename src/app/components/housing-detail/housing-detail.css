@@ -1,0 +1,108 @@
+:host {
+  display: block;
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 800px;
+}
+
+.detail-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.detail-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.detail-body {
+  padding: 24px;
+}
+
+h2 {
+  color: #1a365d;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.location {
+  color: #718096;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.price {
+  color: #2b6cb0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.feature {
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.weather-card {
+  background: linear-gradient(135deg, #2b6cb0, #1a365d);
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  margin: 20px 0;
+}
+
+.weather-card h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.weather-card p {
+  color: rgba(255,255,255,0.9);
+  margin: 4px 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-apply {
+  background-color: #2b6cb0;
+  color: white;
+}
+
+.btn-apply:hover {
+  background-color: #1a365d;
+}
+
+.btn-back {
+  background-color: #edf2f7;
+  color: #4a5568;
+}
+
+.btn-back:hover {
+  background-color: #e2e8f0;
+}

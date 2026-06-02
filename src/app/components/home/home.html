@@ -1,0 +1,21 @@
+<h2>Available Houses</h2>
+
+<div class="houses-grid">
+  @for (house of housingService.houses(); track house.id) {
+    <div class="house-card">
+      <img [src]="house.photo" [alt]="house.name"/>
+      <div class="house-card-body">
+        <h3>{{ house.name }}</h3>
+        <p>{{ house.city }}, {{ house.state }}</p>
+        <p class="price">{{ house.price | currency }}</p>
+        <p>Units: {{ house.availableUnits }}</p>
+        @if (house.available) {
+          <p class="available">Available ✅</p>
+        } @else {
+          <p class="not-available">Not Available ❌</p>
+        }
+        <a [routerLink]="['/housing', house.id]">Ver detalles</a>
+      </div>
+    </div>
+  }
+</div>

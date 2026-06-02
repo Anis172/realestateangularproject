@@ -1,0 +1,34 @@
+@if (house()) {
+  <div class="detail-container">
+    <img class="detail-image" [src]="house()?.photo" [alt]="house()?.name"/>
+    <div class="detail-body">
+      <h2>{{ house()?.name }}</h2>
+      <p class="location">📍 {{ house()?.city }}, {{ house()?.state }}</p>
+      <p class="price">{{ house()?.price | currency }}</p>
+
+      <div class="features">
+        <div class="feature">🏠 Units: {{ house()?.availableUnits }}</div>
+        <div class="feature">📶 Wifi: {{ house()?.wifi ? 'Yes' : 'No' }}</div>
+        <div class="feature">👕 Laundry: {{ house()?.laundry ? 'Yes' : 'No' }}</div>
+        <div class="feature">📍 {{ house()?.coordinate?.latitude }}, {{ house()?.coordinate?.longitude }}</div>
+      </div>
+
+      @if (weather()) {
+        <div class="weather-card">
+          <h3>🌤️ Weather</h3>
+          <p>🌡️ Temperature: {{ weather().main.temp }}°C</p>
+          <p>☁️ {{ weather().weather[0].description }}</p>
+          <p>💧 Humidity: {{ weather().main.humidity }}%</p>
+        </div>
+      }
+
+      <div class="buttons">
+        <a class="btn-apply" routerLink="/apply">Apply Now</a>
+        <a class="btn-back" routerLink="/">Back to list</a>
+      </div>
+    </div>
+  </div>
+} @else {
+  <p>House not found!</p>
+  <a class="btn-back" routerLink="/">Back to list</a>
+}
