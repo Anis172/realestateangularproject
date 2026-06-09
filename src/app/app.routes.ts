@@ -8,5 +8,6 @@ export const routes: Routes = [
   { path: '', component: Home },
   { path: 'housing/:id', component: HousingDetail },
   { path: 'add-house', component: HousingForm },
-  { path: 'apply', component: LoginForm }
+  { path: 'apply', component: LoginForm },
+  { path: 'apply/:id', component: LoginForm }
 ];

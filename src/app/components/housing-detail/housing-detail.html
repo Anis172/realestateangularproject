@@ -23,7 +23,11 @@
       }
 
       <div class="buttons">
-        <a class="btn-apply" routerLink="/apply">Apply Now</a>
+        @if (alreadyApplied()) {
+          <p style="color: green; font-weight: 600;">You already applied for this house!</p>
+        } @else {
+          <a class="btn-apply" [routerLink]="['/apply', house()?.id]">Apply Now</a>
+        }
         <a class="btn-back" routerLink="/">Back to list</a>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit,inject } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginForm implements OnInit {
   private router = inject(Router);
+  private route=inject(ActivatedRoute)
 
   form = new FormGroup({
     firstName: new FormControl('', Validators.required),
@@ -20,6 +22,7 @@ export class LoginForm implements OnInit {
 
   ngOnInit() {
     const saved = localStorage.getItem('applyForm');
+
     if (saved) {
       this.form.patchValue(JSON.parse(saved));
     }
@@ -28,6 +31,9 @@ export class LoginForm implements OnInit {
   onSubmit() {
     if (this.form.invalid) return;
     localStorage.setItem('applyForm', JSON.stringify(this.form.value));
+    const houseId = this.route.snapshot.params['id'];
+    localStorage.setItem('applyForm', JSON.stringify(this.form.value));
+    localStorage.setItem('appliedHouseId', houseId);
     this.router.navigate(['/']);
   }
 }
