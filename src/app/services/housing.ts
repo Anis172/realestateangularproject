@@ -9,8 +9,12 @@ import {tap} from 'rxjs';
 export class HousingService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:3001/housingLocation';
+  public filtrebynameandcity=signal("")
+  public available=signal(false);
+  public sortsense=signal("")
 
   houses = signal<HousingLocation[]>([]);
+
 
 
   getHouseByIdAsync(id: string) {
@@ -26,6 +30,21 @@ export class HousingService {
   loadHouses() {
     this.http.get<HousingLocation[]>(this.apiUrl)
       .subscribe(data => this.houses.set(data));
+  }
+  filteredhouses(){
+    let homes=this.houses().filter(house=>
+      house.name.toLowerCase().includes(this.filtrebynameandcity().toLowerCase())||
+      house.city.toLowerCase().includes(this.filtrebynameandcity().toLowerCase())||
+      house.state.toLowerCase().includes(this.filtrebynameandcity().toLowerCase())).filter(h=>!this.available()||h.available)
+
+      if(this.sortsense()==="asc"){
+         homes=[...homes].sort((a,b)=>a.price-b.price)
+      }else if(this.sortsense()==="desc"){
+        homes=[...homes].sort((a,b)=>b.price-a.price)
+      }
+      return homes
+
+
   }
 
   constructor() {

@@ -1,7 +1,39 @@
 <h2>Available Houses</h2>
+<div style="display: flex; gap: 20px; align-items: flex-end; padding: 16px; background: #f7fafc; border-radius: 10px; margin-bottom: 24px; flex-wrap: wrap;">
+
+  <div style="display: flex; flex-direction: column; gap: 4px;">
+    <label style="font-weight: 600; color: #2d3748; font-size: 0.85rem;">Search</label>
+    <input #inputtextserach
+           (input)="housingService.filtrebynameandcity.set(inputtextserach.value)"
+           placeholder="Name or city..."
+           style="padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;">
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 4px;">
+    <label style="font-weight: 600; color: #2d3748; font-size: 0.85rem;">Sort by price</label>
+    <select #selectvalueinput
+            (change)="housingService.sortsense.set(selectvalueinput.value)"
+            style="padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;">
+      <option value="">Default</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <input type="checkbox"
+           (change)="housingService.available.set($any($event.target).checked)"
+           style="width: 16px; height: 16px; accent-color: #2b6cb0; cursor: pointer;">
+    <label style="font-weight: 600; color: #2d3748; font-size: 0.85rem;">Available only</label>
+  </div>
+
+</div>
+
+
+
 
 <div class="houses-grid">
-  @for (house of housingService.houses(); track house.id) {
+  @for (house of housingService.filteredhouses(); track house.id) {
     <div class="house-card">
       <img [src]="house.photo" [alt]="house.name"/>
       <div class="house-card-body">
