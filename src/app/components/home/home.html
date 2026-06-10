@@ -31,7 +31,6 @@
 
 
 
-
 <div class="houses-grid">
   @for (house of housingService.filteredhouses(); track house.id) {
     <div class="house-card">
@@ -46,6 +45,14 @@
         } @else {
           <p class="not-available">Not Available ❌</p>
         }
+        <button (click)="housingService.toggleFavourite(house)"
+                style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">
+          @if (housingService.isFavourite(house.id)) {
+            ❤️
+          } @else {
+            🤍
+          }
+        </button>
         <a [routerLink]="['/housing', house.id]">Ver detalles</a>
       </div>
     </div>

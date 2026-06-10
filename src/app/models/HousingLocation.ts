@@ -1,3 +1,5 @@
+import { Resena } from './Resena';
+
 export interface HousingLocation {
   id: number;
   name: string;
@@ -13,4 +15,5 @@ export interface HousingLocation {
     latitude: number;
     longitude: number;
   };
+  resenas: Resena[];
 }

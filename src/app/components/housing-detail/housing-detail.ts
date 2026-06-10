@@ -4,13 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { HousingService } from '../../services/housing';
 import { HousingLocation } from '../../models/HousingLocation';
 import { CurrencyPipe } from '@angular/common';
+import { ResenasComponent } from '../resenas/resenas';
 
 @Component({
   selector: 'app-housing-detail',
   standalone: true,
-  imports: [CurrencyPipe, RouterLink],
+  imports: [CurrencyPipe, RouterLink, ResenasComponent],
   templateUrl: './housing-detail.html',
-  styleUrl:'./housing-detail.css'
+  styleUrl: './housing-detail.css',
 })
 export class HousingDetail implements OnInit {
   private route = inject(ActivatedRoute);
@@ -26,7 +27,7 @@ export class HousingDetail implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
 
-    this.housingService.getHouseByIdAsync(id).subscribe(h => {
+    this.housingService.getHouseByIdAsync(id).subscribe((h) => {
       this.house.set(h);
 
       // check if already applied
@@ -36,9 +37,11 @@ export class HousingDetail implements OnInit {
       }
 
       if (h) {
-        this.http.get<any>(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${h.coordinate.latitude}&lon=${h.coordinate.longitude}&appid=${this.apiKey}&units=metric`
-        ).subscribe(data => this.weather.set(data));
+        this.http
+          .get<any>(
+            `https://api.openweathermap.org/data/2.5/weather?lat=${h.coordinate.latitude}&lon=${h.coordinate.longitude}&appid=${this.apiKey}&units=metric`,
+          )
+          .subscribe((data) => this.weather.set(data));
       }
     });
   }

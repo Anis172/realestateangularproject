@@ -1,0 +1,18 @@
+<div class="resenas-container">
+  <h3>Reviews</h3>
+
+  <div class="resenas-summary">
+    <p>Average: {{ getAverageRating() }} ⭐ ({{ resenas.length }} reviews)</p>
+  </div>
+
+  @for (resena of getSortedResenas(); track resena.fecha) {
+    <div class="resena-card">
+      <div class="resena-header">
+        <strong>{{ resena.nombre }}</strong>
+        <span>{{ resena.fecha }}</span>
+      </div>
+      <p>{{ getStars(resena.puntuacion) }}</p>
+      <p>{{ resena.comentario }}</p>
+    </div>
+  }
+</div>

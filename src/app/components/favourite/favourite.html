@@ -1,0 +1,25 @@
+<h2>My Favourites ({{ housingService.favourites().length }})</h2>
+
+@if (housingService.favourites().length === 0) {
+  <p>No favourites yet!</p>
+} @else {
+  <div class="houses-grid">
+    @for (house of housingService.favourites(); track house.id) {
+      <div class="house-card">
+        <img [src]="house.photo" [alt]="house.name"/>
+        <div class="house-card-body">
+          <h3>{{ house.name }}</h3>
+          <p>{{ house.city }}, {{ house.state }}</p>
+          <p class="price">{{ house.price | currency }}</p>
+          <button (click)="housingService.toggleFavourite(house)"
+                  style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">
+            ❤️
+          </button>
+          <a [routerLink]="['/housing', house.id]">Ver detalles</a>
+        </div>
+      </div>
+    }
+  </div>
+}
+
+<a routerLink="/">Back to list</a>

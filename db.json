@@ -5,64 +5,182 @@
       "name": "Acme Fresh Start Housing",
       "city": "Chicago",
       "state": "IL",
-      "photo": "https://angular.dev/assets/images/tutorials/common/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      "photo": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800",
       "availableUnits": 4,
       "wifi": true,
       "laundry": true,
       "available": true,
       "price": 350000,
-      "coordinate": {
-        "latitude": 41.8781,
-        "longitude": -87.6298
-      }
+      "coordinate": {"latitude": 41.8781, "longitude": -87.6298},
+      "resenas": [
+        {"nombre": "Anis", "fecha": "2024-03-01", "puntuacion": 5, "comentario": "Excellent house!"},
+        {"nombre": "Laura", "fecha": "2024-02-15", "puntuacion": 4, "comentario": "Very good location"}
+      ]
     },
     {
       "id": "2",
       "name": "A113 Transitional Housing",
       "city": "Santa Monica",
       "state": "CA",
-      "photo": "https://angular.dev/assets/images/tutorials/common/brandon-griggs-wR11KBaB86U-unsplash.jpg",
+      "photo": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800",
       "availableUnits": 0,
       "wifi": false,
       "laundry": true,
       "available": false,
       "price": 520000,
-      "coordinate": {
-        "latitude": 34.0195,
-        "longitude": -118.4912
-      }
+      "coordinate": {"latitude": 34.0195, "longitude": -118.4912},
+      "resenas": [
+        {"nombre": "Sofia", "fecha": "2024-03-05", "puntuacion": 2, "comentario": "Not great"},
+        {"nombre": "Miguel", "fecha": "2024-02-20", "puntuacion": 4, "comentario": "Good value"}
+      ]
     },
     {
       "id": "3",
       "name": "Warm Beds Housing Support",
       "city": "Juneau",
       "state": "AK",
-      "photo": "https://angular.dev/assets/images/tutorials/common/i-do-nothing-but-love-lAyXdl1-Whs-unsplash.jpg",
+      "photo": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=800",
       "availableUnits": 1,
       "wifi": false,
       "laundry": false,
       "available": true,
       "price": 280000,
-      "coordinate": {
-        "latitude": 58.3005,
-        "longitude": -134.4197
-      }
+      "coordinate": {"latitude": 58.3005, "longitude": -134.4197},
+      "resenas": [
+        {"nombre": "Pedro", "fecha": "2024-03-10", "puntuacion": 5, "comentario": "Amazing!"},
+        {"nombre": "Ana", "fecha": "2024-01-25", "puntuacion": 3, "comentario": "Average"}
+      ]
     },
     {
-      "name": "La luz",
-      "city": "Malaga",
-      "state": "Malaga",
-      "availableUnits": 1,
-      "price": 100000,
+      "id": "4",
+      "name": "Sunset Villa",
+      "city": "Miami",
+      "state": "FL",
+      "photo": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800",
+      "availableUnits": 3,
       "wifi": true,
       "laundry": true,
       "available": true,
-      "photo": "",
-      "coordinate": {
-        "latitude": 0,
-        "longitude": 0
-      },
-      "id": "dTEdRtzQEYc"
+      "price": 650000,
+      "coordinate": {"latitude": 25.7617, "longitude": -80.1918},
+      "resenas": [
+        {"nombre": "Carlos", "fecha": "2024-03-12", "puntuacion": 5, "comentario": "Beautiful views!"},
+        {"nombre": "Maria", "fecha": "2024-02-28", "puntuacion": 4, "comentario": "Great pool area"}
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Green Valley Home",
+      "city": "Portland",
+      "state": "OR",
+      "photo": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800",
+      "availableUnits": 2,
+      "wifi": true,
+      "laundry": false,
+      "available": true,
+      "price": 420000,
+      "coordinate": {"latitude": 45.5051, "longitude": -122.6750},
+      "resenas": [
+        {"nombre": "Emma", "fecha": "2024-03-08", "puntuacion": 4, "comentario": "Very eco friendly!"}
+      ]
+    },
+    {
+      "id": "6",
+      "name": "La Luz",
+      "city": "Malaga",
+      "state": "Andalucia",
+      "photo": "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800",
+      "availableUnits": 1,
+      "wifi": true,
+      "laundry": true,
+      "available": true,
+      "price": 100000,
+      "coordinate": {"latitude": 36.7213, "longitude": -4.4217},
+      "resenas": [
+        {"nombre": "Anis", "fecha": "2024-03-15", "puntuacion": 5, "comentario": "Best house in Malaga!"},
+        {"nombre": "Pablo", "fecha": "2024-03-01", "puntuacion": 4, "comentario": "Great location!"}
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Ocean Breeze Apartment",
+      "city": "San Diego",
+      "state": "CA",
+      "photo": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800",
+      "availableUnits": 5,
+      "wifi": true,
+      "laundry": true,
+      "available": true,
+      "price": 480000,
+      "coordinate": {"latitude": 32.7157, "longitude": -117.1611},
+      "resenas": [
+        {"nombre": "James", "fecha": "2024-03-14", "puntuacion": 5, "comentario": "Ocean views are stunning!"},
+        {"nombre": "Sarah", "fecha": "2024-02-10", "puntuacion": 4, "comentario": "Love the location"}
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Mountain View Cottage",
+      "city": "Denver",
+      "state": "CO",
+      "photo": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800",
+      "availableUnits": 2,
+      "wifi": false,
+      "laundry": true,
+      "available": true,
+      "price": 320000,
+      "coordinate": {"latitude": 39.7392, "longitude": -104.9903},
+      "resenas": [
+        {"nombre": "John", "fecha": "2024-03-09", "puntuacion": 4, "comentario": "Perfect for hiking lovers!"}
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Downtown Loft",
+      "city": "New York",
+      "state": "NY",
+      "photo": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800",
+      "availableUnits": 0,
+      "wifi": true,
+      "laundry": false,
+      "available": false,
+      "price": 890000,
+      "coordinate": {"latitude": 40.7128, "longitude": -74.0060},
+      "resenas": [
+        {"nombre": "David", "fecha": "2024-03-11", "puntuacion": 3, "comentario": "Great location but expensive"},
+        {"nombre": "Lisa", "fecha": "2024-02-05", "puntuacion": 5, "comentario": "Perfect city living!"}
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Cozy Suburban Home",
+      "city": "Austin",
+      "state": "TX",
+      "photo": "https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=800",
+      "availableUnits": 3,
+      "wifi": true,
+      "laundry": true,
+      "available": true,
+      "price": 290000,
+      "coordinate": {"latitude": 30.2672, "longitude": -97.7431},
+      "resenas": [
+        {"nombre": "Tom", "fecha": "2024-03-13", "puntuacion": 5, "comentario": "Amazing neighborhood!"},
+        {"nombre": "Amy", "fecha": "2024-02-22", "puntuacion": 4, "comentario": "Great for families"}
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Mystery House",
+      "city": "Seattle",
+      "state": "WA",
+      "photo": "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800",
+      "availableUnits": 2,
+      "wifi": true,
+      "laundry": true,
+      "available": true,
+      "price": 410000,
+      "coordinate": {"latitude": 47.6062, "longitude": -122.3321},
+      "resenas": []
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

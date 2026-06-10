@@ -14,9 +14,24 @@ export class HousingService {
   public sortsense=signal("")
 
   houses = signal<HousingLocation[]>([]);
+  favourites = signal<HousingLocation[]>(
+    JSON.parse(localStorage.getItem('favourites') || '[]')
+  );
 
 
+  toggleFavourite(house: HousingLocation) {
+    const isFav = this.favourites().some(h => h.id === house.id);
+    if (isFav) {
+      this.favourites.set(this.favourites().filter(h => h.id !== house.id));
+    } else {
+      this.favourites.set([...this.favourites(), house]);
+    }
+    localStorage.setItem('favourites', JSON.stringify(this.favourites()));
+  }
 
+  isFavourite(id: number) {
+    return this.favourites().some(h => h.id === id);
+  }
   getHouseByIdAsync(id: string) {
     return this.http.get<HousingLocation>(`${this.apiUrl}/${id}`);
   }

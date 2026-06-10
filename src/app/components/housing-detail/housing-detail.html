@@ -21,8 +21,16 @@
           <p>💧 Humidity: {{ weather().main.humidity }}%</p>
         </div>
       }
-
+      <app-resenas [resenas]="house()?.resenas || []"/>
       <div class="buttons">
+        <button (click)="housingService.toggleFavourite(house()!)"
+                style="background: none; border: none; cursor: pointer; font-size: 1.5rem;">
+          @if (housingService.isFavourite(house()!.id)) {
+            ❤️
+          } @else {
+            🤍
+          }
+        </button>
         @if (alreadyApplied()) {
           <p style="color: green; font-weight: 600;">You already applied for this house!</p>
         } @else {
